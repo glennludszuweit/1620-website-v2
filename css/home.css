@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap");
+:root {
+  --rotatex: 0deg;
+  --rotatey: 0deg;
+  --rotatez: 0deg;
+  --size: 300px;
+  --gap: 10px;
+}
+
+.box-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  transform-style: preserve-3d;
+  pointer-events: auto;
+}
+.light {
+  position: absolute;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #fda900;
+  text-shadow: 0px 0px 40px#f8b838ea;
+}
+.box {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  transform: rotatex(var(--rotatex)) rotatey(var(--rotatey))
+    rotatez(var(--rotatez));
+  transition: transform 0.2s;
+  animation: rotate 15s ease-in-out infinite forwards alternate;
+}
+.box.off {
+  animation: unset;
+}
+@keyframes rotate {
+  0% {
+    transform: rotatex(var(--rotatex)) rotatey(var(--rotatey))
+      rotatez(var(--rotatez));
+  }
+  100% {
+    transform: rotatex(720deg) rotatey(-360deg) rotatez(-360deg);
+  }
+}
+.box .face {
+  position: absolute;
+  height: var(--size);
+  width: var(--size);
+  border: 1px solid #0005;
+
+  box-shadow: 0 0 5px 2.5px #fcbf49,
+    0 0 var(--gap) calc(var(--gap) / 4) #ffd581de;
+  box-shadow: 0 0 30px 5px #ffd5815b, 0 0 8px 1px #ffd581de;
+}
+.box .face.face-top {
+  background: url("../img/home.gif");
+  background-size: cover;
+  transform: translatey(calc(-50% - var(--gap))) rotatex(90deg);
+}
+.box .face.face-bottom {
+  background: url("../img/how.gif");
+  background-size: cover;
+  transform: translatey(calc(var(--gap) + 50%)) rotatex(-90deg);
+}
+.box .face.face-right {
+  background: url("../img/love.gif");
+  background-size: cover;
+  transform: translatex(calc(var(--gap) + 50%)) rotatey(90deg);
+}
+.box .face.face-left {
+  background: url("../img/now.gif");
+  background-size: cover;
+  transform: translatex(calc(-50% - var(--gap))) rotatey(-90deg);
+}
+.box .face.face-back {
+  background: url("../img/speak.gif");
+  background-size: cover;
+  transform: translatez(calc(var(--size) / -2 - var(--gap)));
+}
+.box .face.face-front {
+  background: url("../img/what.gif");
+  background-size: cover;
+  transform: translatez(calc(var(--size) / 2 + var(--gap))) rotatez(180deg);
+}
+
+@media screen and (max-width: 575px) {
+  :root {
+    --size: 165px;
+    --gap: 5px;
+  }
+
+  .light {
+    font-size: 3rem;
+    text-shadow: 0px 0px 30px#f8b838ea;
+    transform: rotate(90deg);
+  }
+}

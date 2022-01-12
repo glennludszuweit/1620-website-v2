@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1620 Studios</title>
+    <meta name="description" content="1620 Studios Landing Page" />
+    <meta name="author" content="Glenn Ludszuweit" />
+    <link rel="shortcut icon" href="./img/home.gif" />
+    <link rel="stylesheet" href="https://use.typekit.net/pcm0svs.css" />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./css/home.css" />
+    <link rel="stylesheet" type="text/css" href="./css/projects.css" />
+    <link rel="stylesheet" type="text/css" href="./css/contact.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+    </script>
+  </head>
+  <body class="loading">
+    <canvas class="geo-pyras"></canvas>
+    <main>
+      <!-- /page -->
+      <div class="menu-wrap">
+        <div class="menu-draggable"></div>
+        <nav class="menu">
+          <div>
+            <div class="menu__item">
+              <div class="container-2">
+                <div class="card">
+                  <img src="./img/yolo.png" />
+                  <div class="card__head">YOLO</div>
+                </div>
+                <div class="card">
+                  <img src="./img/arts.png" />
+                  <div class="card__head">Arts</div>
+                </div>
+                <div class="card">
+                  <img src="./img/guerrilla.png" />
+                  <div class="card__head">Guerrilla</div>
+                </div>
+                <div class="card">
+                  <img src="./img/valhalla.png" />
+                  <div class="card__head">Valhalla</div>
+                </div>
+                <div class="card">
+                  <img src="./img/wallmart-out.png" />
+                  <div class="card__head">Wallmart</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="menu__item">
+              <div class="box-container">
+                <div
+                  class="home"
+                  onmousedown="onMouseDown()"
+                  onmouseup="onMouseUp()"
+                  onmousemove="onMouseMove(event)"
+                >
+                  <div
+                    class="box"
+                    onmouseenter="animateFace()"
+                    onmouseleave="stopAminateFace()"
+                  >
+                    <div class="face face-top"></div>
+                    <div class="face face-bottom"></div>
+                    <div class="face face-left"></div>
+                    <div class="face face-right"></div>
+                    <div class="face face-front"></div>
+                    <div class="face face-back"></div>
+                  </div>
+                  <div class="light">1620</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="menu__item">
+              <div class="container">
+                <div class="card">
+                  <img src="./img/yolo.png" />
+                  <div class="card__head">YOLO</div>
+                </div>
+                <div class="card">
+                  <img src="./img/arts.png" />
+                  <div class="card__head">Arts</div>
+                </div>
+                <div class="card">
+                  <img src="./img/guerrilla.png" />
+                  <div class="card__head">Guerrilla</div>
+                </div>
+                <div class="card">
+                  <img src="./img/valhalla.png" />
+                  <div class="card__head">Valhalla</div>
+                </div>
+                <div class="card">
+                  <img src="./img/wallmart-out.png" />
+                  <div class="card__head">Wallmart</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!--menu-->
+      </div>
+      <!--/menu-wrap-->
+      <ul class="external__links">
+        <li class="link"><a href="">Opensea</a></li>
+        <li class="link"><a href="">Etherscan</a></li>
+        <li class="link"><a href="">Coinmarketcap</a></li>
+      </ul>
+      <ul class="social__links">
+        <li class="link"><a href="">Twitter</a></li>
+        <li class="link"><a href="">Medium</a></li>
+        <li class="link"><a href="">Github</a></li>
+      </ul>
+      <ul class="copyrights">
+        <li class="label">
+          1620 Studios Reserved &copy; <span id="copyrights"></span>
+        </li>
+        <li class="statement">
+          1620 studios and its affiliates respects the rights of every artists
+          and creators.
+        </li>
+        <li class="statement">
+          All contents and works in this website comes with consent and holders
+          copyrights.
+        </li>
+      </ul>
+      <p class="info">Swipe / drag screen to navigate</p>
+    </main>
+    <div class="cursor">
+      <div class="cursor__inner cursor__inner--circle">
+        <div class="cursor__side cursor__side--left"></div>
+        <div class="cursor__side cursor__side--right"></div>
+      </div>
+    </div>
+    <script>
+      const copy = document.getElementById("copyrights");
+      const currentYear = new Date().getFullYear();
+      copy.textContent = currentYear;
+    </script>
+    <script src="./js/TweenMax.min.js"></script>
+    <script src="./js/draggabilly.pkgd.min.js"></script>
+    <script src="./js/geoPyras.js"></script>
+    <script src="./js/box.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
